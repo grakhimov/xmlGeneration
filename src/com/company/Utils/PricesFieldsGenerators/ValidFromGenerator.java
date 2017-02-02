@@ -1,4 +1,4 @@
-package com.company.Utils;
+package com.company.Utils.PricesFieldsGenerators;
 
 import java.time.LocalDate;
 import java.util.Random;
@@ -7,7 +7,7 @@ import java.util.Random;
  * Created by George_Rakhimov on 11/9/2016.
  */
 public class ValidFromGenerator {
-    public String validFrom(){
+    public String validFromGenerator(){
         Random random = new Random();
         int minDay = (int) LocalDate.of(2016, 1, 1).toEpochDay();
         int maxDay = (int) LocalDate.of(2016, 12, 31).toEpochDay();

@@ -1,4 +1,4 @@
-package com.company.Utils;
+package com.company.Utils.PricesFieldsGenerators;
 
 /**
  * Created by George_Rakhimov on 11/9/2016.
