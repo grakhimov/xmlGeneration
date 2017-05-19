@@ -17,7 +17,7 @@ public class ProductCenterGenerator {
             productCenter = "PURIFICATION_SYSTEMS";
         }
         if (randomValue >= 0.75 & randomValue < 1) {
-            productCenter = "NUCLEIC_ACID_PURIFICATION";
+            productCenter = "DHARMACON";
         }
         return productCenter;
     }
@@ -32,8 +32,8 @@ public class ProductCenterGenerator {
         if (productCenter == "PURIFICATION_SYSTEMS") {
             productCenterID = "46";
         }
-        if (productCenter == "NUCLEIC_ACID_PURIFICATION"){
-            productCenterID = null;}
+        if (productCenter == "DHARMACON"){
+            productCenterID = "55";}
         return productCenterID;
     }
 }

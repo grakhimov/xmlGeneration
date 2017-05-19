@@ -23,10 +23,10 @@ public class PriceNode {
         String node = " <hyb:lsProductPrice productCode=\"" + productCode + "\">\n" +
                 "       <hyb:countryPrice country=\"" + country + "\">\n" +
                 "           <hyb:currencyPrice currency=\"" + currency + "\" listFlag=\"Y\">\n" +
-                "               <hyb:price>\"" + price + "</hyb:price>\n" +
+                "               <hyb:price>" + price + "</hyb:price>\n" +
                 "               <hyb:validFrom>" + validFrom + "</hyb:validFrom>\n" +
-                "               <hyb:validFrom>2020-12-31</hyb:validFrom>\n" +
-                "               <hyb:priceUpdateDate>2016-01-01T07:00:00Z</hyb:priceUpdateDate>\n" +
+                "               <hyb:validTo>2020-12-31</hyb:validTo>\n" +
+                "               <hyb:priceUpdateDate>2016-01-01T07:00:00.000Z</hyb:priceUpdateDate>\n" +
                 "           </hyb:currencyPrice>\n" +
                 "       </hyb:countryPrice>\n" +
                 "   </hyb:lsProductPrice>\n";

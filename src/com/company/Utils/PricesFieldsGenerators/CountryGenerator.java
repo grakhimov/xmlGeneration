@@ -66,7 +66,7 @@ public class CountryGenerator {
             country = "DE";
         }
         if (randomValue >= 0.475 & randomValue < 0.5) {
-            country = "HY";
+            country = "IE";
         }
         if (randomValue >= 0.5 & randomValue < 0.525) {
             country = "IE";
@@ -111,7 +111,7 @@ public class CountryGenerator {
             country = "CH";
         }
         if (randomValue >= 0.85 & randomValue < 0.875) {
-            country = "UK";
+            country = "GB";
         }
         if (randomValue >= 0.875 & randomValue < 0.9) {
             country = "AR";

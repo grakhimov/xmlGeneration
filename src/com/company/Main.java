@@ -1,11 +1,14 @@
 package com.company;
 
-import com.company.Utils.*;
+import com.company.Utils.PriceNode;
 import com.company.Utils.PricesFieldsGenerators.*;
 import com.company.Utils.ProductFieldsGenerators.*;
+import com.company.Utils.ProductNode;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
@@ -24,7 +27,7 @@ public class Main {
         ProductTypeGenerator productTypeGenerator = new ProductTypeGenerator();
         StatusGenerator statusGenerator = new StatusGenerator();
 
-        int numberOfNodes = 300000;
+        int numberOfNodes = 20000;
 
         ArrayList<Integer> productCodes = new ArrayList<>();
         for (int i = 0; i < numberOfNodes; i++) {
@@ -55,11 +58,16 @@ public class Main {
 
                 writer.write(productNode.getProductNode());
             }
-            writer.write("</lsproducts>");
+            writer.write("</hybris:lsproducts>");
             writer.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        List<String> activeCountries = new ArrayList<>(Arrays.asList("AR", "AT", "AU", "BE", "BR", "CA", "CH", "DE", "DK", "EE", "ES", "FI", "FR", "GB", "IE", "IT", "LT", "LV", "MX", "NL",
+                "NO", "NZ", "PT", "SE", "US"));
+        List<String> currencyIsoCodes = new ArrayList<>(Arrays.asList("USD", "EUR", "AUD", "EUR", "BRL", "CAD", "CHF", "EUR", "DKK", "EUR", "EUR", "EUR", "EUR", "GBR", "EUR", "EUR", "EUR",
+                "EUR", "USD", "EUR", "NOK", "NZD", "EUR", "SEK", "USD"));
 
         try (Writer writer = new BufferedWriter(new OutputStreamWriter(
                 new FileOutputStream("\\GEUK\\prices.xml"), "utf-8"))) {
@@ -67,15 +75,18 @@ public class Main {
                     "<hyb:lsProductPrices xmlns:hyb=\"http://www.HybrisRest.org/RestAPIsend/xsd/HybrisPriceInput\">\n");
             for (int i = 0; i < numberOfNodes; i++) {
                 int productCode = productCodes.get(i);
-                String country = countryGenerator.countryGenerator();
-                String currency = currencyGenerator.currencyGenerator();
-                String price = priceGenerator.priceGenerator();
-                String validFrom = validFromGenerator.validFromGenerator();
+                for (int j = 0; j < activeCountries.size(); j++) {
+                    String country = activeCountries.get(j);
+                    String currency = currencyIsoCodes.get(j);
+                    String price = priceGenerator.priceGenerator();
+                    String validFrom = validFromGenerator.validFromGenerator();
 
-                PriceNode priceNode = new PriceNode();
-                //priceNode.setPriceNodeWithCurrencyPriceId(productCode, country, currency, price, validFrom, currencyPriceId);
-                priceNode.setPriceNode(productCode, country, currency, price, validFrom);
-                writer.write(priceNode.getPriceNode());
+                    PriceNode priceNode = new PriceNode();
+                    //priceNode.setPriceNodeWithCurrencyPriceId(productCode, country, currency, price, validFrom, currencyPriceId);
+                    priceNode.setPriceNode(productCode, country, currency, price, validFrom);
+                    writer.write(priceNode.getPriceNode());
+                }
+
             }
             writer.write("</hyb:lsProductPrices>");
             writer.close();
