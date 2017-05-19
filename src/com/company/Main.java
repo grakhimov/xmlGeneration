@@ -14,8 +14,8 @@ public class Main {
 
     public static void main(String[] args) {
         ProductCodeGenerator productCodeGenerator = new ProductCodeGenerator();
-        CountryGenerator countryGenerator = new CountryGenerator();
-        CurrencyGenerator currencyGenerator = new CurrencyGenerator();
+        //CountryGenerator countryGenerator = new CountryGenerator();
+        //CurrencyGenerator currencyGenerator = new CurrencyGenerator();
         PriceGenerator priceGenerator = new PriceGenerator();
         ValidFromGenerator validFromGenerator = new ValidFromGenerator();
 

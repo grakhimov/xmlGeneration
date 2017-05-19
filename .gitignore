@@ -9,3 +9,5 @@
 /data
 /log
 /temp
+out/
+meta-inf/
