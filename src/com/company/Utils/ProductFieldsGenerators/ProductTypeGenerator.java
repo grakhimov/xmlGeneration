@@ -4,7 +4,7 @@ package com.company.Utils.ProductFieldsGenerators;
  * Created by George_Rakhimov on 11/14/2016.
  */
 public class ProductTypeGenerator {
-    public String productTypeGenerator(){
+    public String productTypeGenerator() {
         double randomValue = Math.random();
         String productType = null;
         if (randomValue < 0.25) {

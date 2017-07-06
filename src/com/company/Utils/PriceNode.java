@@ -11,7 +11,7 @@ public class PriceNode {
     private String validFrom;
     private int currencyPriceId;
 
-    public void setPriceNode(int productCode, String country, String currency, String price, String validFrom){
+    public void setPriceNode(int productCode, String country, String currency, String price, String validFrom) {
         this.productCode = productCode;
         this.country = country;
         this.currency = currency;
@@ -19,7 +19,7 @@ public class PriceNode {
         this.validFrom = validFrom;
     }
 
-    public String getPriceNode(){
+    public String getPriceNode() {
         String node = " <hyb:lsProductPrice productCode=\"" + productCode + "\">\n" +
                 "       <hyb:countryPrice country=\"" + country + "\">\n" +
                 "           <hyb:currencyPrice currency=\"" + currency + "\" listFlag=\"Y\">\n" +
@@ -32,7 +32,8 @@ public class PriceNode {
                 "   </hyb:lsProductPrice>\n";
         return node;
     }
-    public void setPriceNodeWithCurrencyPriceId(int productCode, String country, String currency, String price, String validFrom, int currencyPriceId){
+
+    public void setPriceNodeWithCurrencyPriceId(int productCode, String country, String currency, String price, String validFrom, int currencyPriceId) {
         this.productCode = productCode;
         this.country = country;
         this.currency = currency;
@@ -41,7 +42,7 @@ public class PriceNode {
         this.currencyPriceId = currencyPriceId;
     }
 
-    public String getPriceNodeWithCurrencyPriceId(){
+    public String getPriceNodeWithCurrencyPriceId() {
         String node = " <lsProductPrice productCode=\"" + productCode + "\">\n" +
                 "    <countryPrice country=\"" + country + "\">\n" +
                 "      <currencyPrice id=\"" + currencyPriceId + "\" currency=\"" + currency + "\" listFlag=\"N\">\n" +

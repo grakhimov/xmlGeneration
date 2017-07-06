@@ -5,7 +5,8 @@ package com.company.Utils.ProductFieldsGenerators;
  */
 public class ProductCenterGenerator {
     String productCenter = null;
-    public String productCenterGenerator(){
+
+    public String productCenterGenerator() {
         double randomValue = Math.random();
         if (randomValue < 0.25) {
             productCenter = "PURIFICATION_MEDIA";
@@ -21,19 +22,21 @@ public class ProductCenterGenerator {
         }
         return productCenter;
     }
-    public String getProductCenterId(){
+
+    public String getProductCenterId() {
         String productCenterID = null;
         if (productCenter == "PURIFICATION_MEDIA") {
             productCenterID = "42";
         }
-        if (productCenter == "PROTEIN_SAMPLE_PREP"){
+        if (productCenter == "PROTEIN_SAMPLE_PREP") {
             productCenterID = "92";
         }
         if (productCenter == "PURIFICATION_SYSTEMS") {
             productCenterID = "46";
         }
-        if (productCenter == "DHARMACON"){
-            productCenterID = "55";}
+        if (productCenter == "DHARMACON") {
+            productCenterID = "55";
+        }
         return productCenterID;
     }
 }

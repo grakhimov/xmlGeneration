@@ -16,7 +16,7 @@ public class ProductNode {
     private String productGroupId;
     private String productType;
 
-    public void setProductNode(int productCode, String buyable, String available, String status,  String businessAreaId, String businessArea, String productCenterId, String productCenter, String productGroupId, String productGroup, String productType){
+    public void setProductNode(int productCode, String buyable, String available, String status, String businessAreaId, String businessArea, String productCenterId, String productCenter, String productGroupId, String productGroup, String productType) {
         this.productCode = productCode;
         this.buyable = buyable;
         this.available = available;
@@ -30,7 +30,7 @@ public class ProductNode {
         this.businessAreaId = businessAreaId;
     }
 
-    public String getProductNode(){
+    public String getProductNode() {
         String node = " <hybris:lsproduct productCode=\"" + productCode + "\" catalogCode=\"" + productCode + "\"  buyable=\"" + buyable + "\"\n" +
                 "   available=\"" + available + "\" status=\"" + status + "\">\n" +
                 "       <hybris:productName>test product " + productCode + "</hybris:productName>\n" +

@@ -5,22 +5,26 @@ package com.company.Utils.ProductFieldsGenerators;
  */
 public class BusinessAreaGenerator {
     String businessArea = null;
-    public String businessAreaGenerator(){
+
+    public String businessAreaGenerator() {
         double randomValue = Math.random();
-        if (randomValue < 0.5){
+        if (randomValue < 0.5) {
             businessArea = "RESEARCH_MARKET";
         }
-        if (randomValue >= 0.5 & randomValue < 1){
+        if (randomValue >= 0.5 & randomValue < 1) {
             businessArea = "BIOPROCESS";
         }
         return businessArea;
     }
-    public String getBusinessAreaId(){
+
+    public String getBusinessAreaId() {
         String businessAreaId = null;
         if (businessArea == "BIOPROCESS") {
-            businessAreaId = "021";}
-        if (businessArea == "RESEARCH_MARKET"){
-            businessAreaId = "025";}
+            businessAreaId = "021";
+        }
+        if (businessArea == "RESEARCH_MARKET") {
+            businessAreaId = "025";
+        }
         return businessAreaId;
     }
 }
